@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.marko.mojaaplikacija.ReadPostActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <TextView
+        android:id="@+id/lbltitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/toolbar"
+        android:text="Title"/>
+
+    <TextView
+        android:id="@+id/lbltext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/lbltitle"
+        android:text="Some random text..."
+        android:layout_marginBottom="40dp"/>
+
+
+    <TextView
+        android:id="@+id/lbltags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbltext"
+        android:text="#tag1 #tag2 #tag3"/>
+
+    <TextView
+        android:id="@+id/lbllocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbltags"
+        android:text="Novi Sad, Serbia"/>
+
+    <TextView
+        android:id="@+id/lblauthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbllocation"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/lbldate"
+        android:text="Created by: Marko Topic"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:id="@+id/lbldate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbllocation"
+        android:layout_alignParentRight="true"
+        android:text="Date: 27.03.2018"/>
+
+    <TextView
+        android:id="@+id/lbllikes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblauthor"
+        android:text="2likes/1dislike"
+        />
+
+    <TextView
+        android:id="@+id/lbl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbllikes"
+        android:text="Comments:"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/lblcomment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbl1"
+        android:text="Pera: tekst komentara"/>
+
+
+
+
+
+</RelativeLayout>

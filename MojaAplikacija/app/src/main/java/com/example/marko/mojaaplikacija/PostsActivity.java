@@ -8,9 +8,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.marko.mojaaplikacija.adapters.PostAdapter;
+import com.example.marko.mojaaplikacija.fragments.MyFragment;
+import com.example.marko.mojaaplikacija.tools.FragmentTransition;
+
+import java.util.ArrayList;
+
+import model.Post;
+
 public class PostsActivity extends AppCompatActivity {
+
+    private ListView mDrawerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +31,25 @@ public class PostsActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
 
-//    @Override
-//    public boolean onPrepareOptionsMenu(final Menu menu) {
-//        getMenuInflater().inflate(R.menu.action_bar, menu);
+        FragmentTransition.to(MyFragment.newInstance(), this, false);
+
+
+//        ListView listView = (ListView) findViewById(R.id.lista);
+//        final ArrayList<Post> postList = new ArrayList<>();
+//        postList.add(new Post("Naslov 1", "Neki opis 1"));
+//        postList.add(new Post("Naslov 2", "Neki opis 2"));
+//        postList.add(new Post("Naslov 3", "Neki opis 3"));
 //
-////        return super.onCreateOptionsMenu(menu);
-//        return true;
-//    }
+//        final PostAdapter pAdapter = new PostAdapter(this, postList);
+//        listView.setAdapter(pAdapter);
+
+
+
+
+
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

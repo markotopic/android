@@ -20,8 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_below="@+id/toolbar"
-        android:text="Title"/>
+        android:layout_below="@+id/toolbar"/>
 
     <TextView
         android:id="@+id/lbltext"
@@ -29,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/lbltitle"
-        android:text="Some random text..."
         android:layout_marginBottom="40dp"/>
 
 

@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ReadPostActivity extends AppCompatActivity {
@@ -17,6 +18,12 @@ public class ReadPostActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        TextView title = (TextView)findViewById(R.id.lbltitle);
+        TextView decr = (TextView)findViewById(R.id.lbltext);
+
+        title.setText(getIntent().getStringExtra("title"));
+        decr.setText(getIntent().getStringExtra("descr"));
     }
 
     @Override

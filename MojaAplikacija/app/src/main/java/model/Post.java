@@ -24,6 +24,11 @@ public class Post {
     private int likes;
     private int dislikes;
 
+    public Post(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }

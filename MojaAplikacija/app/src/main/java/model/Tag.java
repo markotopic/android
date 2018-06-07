@@ -1,14 +1,22 @@
 package model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by marko on 17.4.18..
  */
 
-public class Tag {
+public class Tag implements Serializable {
 
+    @SerializedName("id")
+    @Expose
     private int id;
+    @SerializedName("name")
+    @Expose
     private String name;
     private List<Post> posts;
 

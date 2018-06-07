@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:context="com.example.marko.mojaaplikacija.CreatePostActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,41 +18,139 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
 
-    <TextView
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create new post"
-        android:layout_marginStart="125dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title"
-        android:inputType="text|textCapWords"/>
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter text here..."
-        android:inputType="text|textMultiLine"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create new post"
+            android:layout_marginStart="125dp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tags"
-        android:inputType="text"/>
+            <EditText
+                android:id="@+id/title_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/description_edit"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="34dp"
+                android:hint="Title"
+                android:inputType="text|textCapWords" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload image"/>
+            <EditText
+                android:id="@+id/description_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tags_edit"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="17dp"
+                android:hint="Enter text here..."
+                android:inputType="text|textMultiLine" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Post"/>
+            <EditText
+                android:id="@+id/tags_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/upload_btn"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="60dp"
+                android:hint="Tags"
+                android:inputType="text" />
 
+            <Button
+                android:id="@+id/upload_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="196dp"
+                android:text="Upload image" />
 
+            <Button
+                android:id="@+id/post_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/upload_btn"
+                android:layout_marginTop="106dp"
+                android:text="Post" />
+
+        </RelativeLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:id="@+id/drawer_pane"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <RelativeLayout
+                android:id="@+id/profile_box"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#123"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_user_white"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/avatar"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:id="@+id/view_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View profile"
+                        android:textSize="14sp"
+                        android:textColor="#fff"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/profile_box"
+                android:choiceMode="singleChoice"
+                android:background="#fff"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

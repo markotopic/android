@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.marko.mojaaplikacija">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +29,17 @@
         <activity android:name=".CreatePostActivity" />
         <activity android:name=".ReadPostActivity" />
         <activity android:name=".SettingsActivity"></activity>
+
+        <provider
+            android:name="com.example.marko.mojaaplikacija.database.DBContentProvider"
+            android:authorities="com.example.marko.mojaaplikacija" >
+        </provider>
+
+        <provider
+            android:name="com.example.marko.mojaaplikacija.database.UserDBContentProvider"
+            android:authorities="com.example.marko.mojaaplikacija" >
+        </provider>
+
 
     </application>
 

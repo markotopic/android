@@ -3,6 +3,10 @@ package model;
 import android.graphics.Bitmap;
 import android.location.Location;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -10,24 +14,57 @@ import java.util.List;
  * Created by marko on 17.4.18..
  */
 
-public class Post {
+public class Post implements Serializable {
 
+    @SerializedName("id")
+    @Expose
     private int id;
+    @SerializedName("title")
+    @Expose
     private String title;
+    @SerializedName("description")
+    @Expose
     private String description;
+    @SerializedName("photo")
+    @Expose
     private Bitmap photo;
+    @SerializedName("author")
+    @Expose
     private User author;
+    @SerializedName("date")
+    @Expose
     private Date date;
+    @SerializedName("location")
+    @Expose
     private Location location;
     private List<Tag> tags;
     private List<Comment> comments;
+    @SerializedName("likes")
+    @Expose
     private int likes;
+    @SerializedName("dislikes")
+    @Expose
     private int dislikes;
 
-    public Post(String title, String description) {
+    public  Post() {
+
+    }
+
+    public Post(int id, String title, String description, Bitmap photo, User author, Date date, int likes, int dislikes) {
+        this.id = id;
         this.title = title;
         this.description = description;
+        this.photo = photo;
+        this.author = author;
+        this.date = date;
+        this.likes = likes;
+        this.dislikes = dislikes;
     }
+
+//    public Post(String title, String description) {
+//        this.title = title;
+//        this.description = description;
+//    }
 
     public int getId() {
         return id;

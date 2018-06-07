@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Sort Posts"
+        android:key="pref_sort_posts_key">
 
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_sort_post_by_date_key"
+            android:title="Sort by date"
+            android:summary="Sort posts by date"/>
+
+        <CheckBoxPreference
+            android:key="pref_sort_post_by_popularity_key"
+            android:title="Sort by popularity"
+            android:summary="Sort posts by popularity"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_sort_comments_key"
+        android:title="Sort comments">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_sort_comment_by_date_key"
+            android:title="Sort by date"
+            android:summary="Sort comments by date"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_sort_comment_by_popularity_key"
+            android:title="Sort by popularity"
+            android:summary="Sort comments by popularity"/>
+
+    </PreferenceCategory>
 </PreferenceScreen>

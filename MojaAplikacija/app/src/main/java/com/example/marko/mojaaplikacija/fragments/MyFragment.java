@@ -42,11 +42,11 @@ public class MyFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        Post post = Mokap.getPosts().get(position);
+//        Post post = Mokap.getPosts().get(position);
 
         Intent intent = new Intent(getActivity(), ReadPostActivity.class);
-        intent.putExtra("title", post.getTitle());
-        intent.putExtra("descr", post.getDescription());
+//        intent.putExtra("title", post.getTitle());
+//        intent.putExtra("descr", post.getDescription());
         startActivity(intent);
     }
 

@@ -17,31 +17,78 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnStartCreatePostActivity"
-        android:text="Create post"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnStartReadPostActivity"
-        android:text="Read post"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="btnStartSettingsActivity"
-        android:text="Settings"/>
-
-    <ListView
-        android:id="@+id/lista"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <ListView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/drawer_pane"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <RelativeLayout
+                android:id="@+id/profile_box"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#123"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_user_white"
+                    android:layout_marginTop="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/avatar"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:id="@+id/view_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View profile"
+                        android:textSize="14sp"
+                        android:textColor="#fff"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/profile_box"
+                android:choiceMode="singleChoice"
+                android:background="#fff"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 
 
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.marko.mojaaplikacija.ReadPostActivity">
 
     <android.support.v7.widget.Toolbar
@@ -15,79 +16,90 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <TextView
-        android:id="@+id/lbltitle"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_below="@+id/toolbar"/>
+        android:background="?attr/colorPrimary"
+        app:tabGravity="fill"/>
 
-    <TextView
-        android:id="@+id/lbltext"
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/lbltitle"
-        android:layout_marginBottom="40dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/lbltags"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbltext"
-        android:text="#tag1 #tag2 #tag3"/>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-    <TextView
-        android:id="@+id/lbllocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbltags"
-        android:text="Novi Sad, Serbia"/>
-
-    <TextView
-        android:id="@+id/lblauthor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbllocation"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@id/lbldate"
-        android:text="Created by: Marko Topic"
-        android:layout_marginBottom="15dp" />
-
-    <TextView
-        android:id="@+id/lbldate"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbllocation"
-        android:layout_alignParentRight="true"
-        android:text="Date: 27.03.2018"/>
-
-    <TextView
-        android:id="@+id/lbllikes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lblauthor"
-        android:text="2likes/1dislike"
-        />
-
-    <TextView
-        android:id="@+id/lbl1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbllikes"
-        android:text="Comments:"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/lblcomment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lbl1"
-        android:text="Pera: tekst komentara"/>
+        <RelativeLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </RelativeLayout>
 
 
+        <RelativeLayout
+            android:id="@+id/drawer_pane"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
 
+            <RelativeLayout
+                android:id="@+id/profile_box"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#123"
+                android:padding="8dp">
 
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_user_white"
+                    android:layout_marginTop="15dp"/>
 
-</RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/avatar"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#fff"/>
+
+                    <TextView
+                        android:id="@+id/view_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View profile"
+                        android:textSize="14sp"
+                        android:textColor="#fff"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/nav_list"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/profile_box"
+                android:choiceMode="singleChoice"
+                android:background="#fff"/>
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

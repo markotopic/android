@@ -20,6 +20,8 @@ public class SettingsActivity extends PreferenceActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
+
+
     }
 
     @Override
